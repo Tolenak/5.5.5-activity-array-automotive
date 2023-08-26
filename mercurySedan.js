@@ -12,6 +12,60 @@ console.log(v.make)
 
 
 //TO DO: Code the Car subclass here or in index.js file, i.e. class Car extends Vehicle ...
+class Car extends VehicleModule {
+    constructor(make, model, year, color, mileage) {
+        super(make, model, year, color, mileage)
+        this.maximumPassengers = 5; 
+        this.passengers = 0;
+        this.numberOfWheels = 4; 
+        this.maximumSpeed = 160; 
+        this.fuel = 10; 
+        this.scheduleservice = false; 
+    }
+
+    loadPassenger(num) { 
+        if (this.passengers < this.maximumPassengers) { 
+            if ((num + this.passenger) <= this.maximumPassengers) {
+                this.passenger = num; 
+                return this.passenger;   
+            } else {
+                console.log(this.model + " " + this.make + " not enough space to fit all passengers.");
+            }
+        }
+
+    }
+    
+    start (){
+    if (this.fuel > 0) { 
+        console.log("engine has started."); 
+        return this.started = true 
+    } else { 
+        console.log('engine has not started, no fuel'); 
+        return this.started = false; 
+        }
+    }
+    scheduleservice(mileage) {
+        if (this.mileage > 30000) { 
+            console.log("You are due for service");
+            return this.timeformaintenance = true;
+        } else { 
+            console.log("You are not due for service")
+            return this.timeformaintenance = false; 
+        }
+    }
+    
+}
+
+    let myCar = new Car('mercury', 'rad_sedan', '2002', 'white', 50000)
+
+    
+    myCar.loadPassenger()
+    myCar.Start()
+    myCar.stop()
+    myCar.scheduleservice()
+
+    console.log(myCar)
+
 
 
 
